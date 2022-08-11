@@ -9,11 +9,13 @@ body {
     overflow: overlay;
 }
 
-body::-webkit-scrollbar-track  {
-    background: linear-gradient(to bottom, transparent, var(--scrollbar-color) 1px) no-repeat center/1px 90%;
+body::-webkit-scrollbar-track {
+	pointer-events: none;
+	background: linear-gradient(to bottom, transparent, var(--scroll-color) 1px) no-repeat center / 1px 90%;
 }
 
-body ::-webkit-scrollbar {
+
+body::-webkit-scrollbar {
     width: 100px;
     height: 100%;
 }
@@ -21,3 +23,35 @@ body ::-webkit-scrollbar {
 [hidden] {
     display: none;
 }
+
+body {
+    cursor: var(--cursor-dark);
+}
+
+[cursor]:hover {
+    cursor: var(--cursor-dark-hover);
+}
+
+bg-white [cursor] {
+    cursor: var(--cursor);
+}
+
+bg-white [cursor]:hover {
+    cursor: var(--cursor-hover);
+}
+
+bg-white {
+    background: white;
+    display: flex;
+    cursor: var(--cursor);
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+bg-black {
+    background: black;
+    display: flex;
+    position: relative;
+}
+
